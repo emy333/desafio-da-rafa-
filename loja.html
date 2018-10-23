@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="img/agil-simbol.ico">
+
+  <title>GERENCIA BEM</title>
+
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+   <link href="css/animate.min.css" rel="stylesheet">
+   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+   <link href="css/style.css" rel="stylesheet">
+   <link href="css/loja.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<!--<div class="container">
+	<div class="row" id="loja">
+		<div class="col-xs-12 col-lg-4">
+			<div class="gallery">
+				<input type="checkbox" class="box" id="sac" onclick="">
+			    <img src="img/telefone.png" alt="" width="300" height="200">
+			  <div class="desc">MÓDULO SAC</div>
+			</div>
+		</div>
+
+		<div class="col-xs-12 col-lg-4">
+		<div class="gallery" id="gestao">
+			<input type="checkbox" class="box" id="gestao">
+		    <img src="img/gestao.png" alt="" width="300" height="200">
+		  <div class="desc">MÓDULO GESTÃO</div>
+		</div>
+	</div>
+	<div class="col-xs-12 col-lg-4">
+		<div class="gallery" id="vendas">
+			<input type="checkbox" class="box" id="venda">
+		    <img src="img/moeda.png" alt="" width="300" height="200">
+		  <div class="desc">MÓDULO VENDAS</div>
+		</div><br>
+
+		<button type="button" class="comprar">COMPRAR</button>
+	
+	</div>
+	</div>
+</div> -->
+
+<div class="container">
+	 <h2 id="itemselec" class="wow fadeInLeft">MÓDULOS SELECIONADOS:</h2>
+	<div class="row" id="loja">
+		<div class="col-xs-12 col-lg-4">
+            <div class="gallery">
+				<input type="checkbox" class="box" id="check_sac"> <!--check_phone-->
+			    <img src="img/telefone.png" alt="" width="300">
+			<div class="desc">MÓDULO SAC</div>
+		</div></div>
+		<div class="col-xs-12 col-lg-4">
+			<div class="gallery">
+			<input type="checkbox" class="box" id="check_gestao"> <!--check_briefcase-->
+		    <img src="img/gestao.png" alt="" width="300" height="200">
+		  <div class="desc">MÓDULO GESTÃO</div>
+	</div></div>
+
+
+<div class="col-xs-12 col-lg-4">
+		<div class="gallery">
+			<input type="checkbox" class="box" id="check_venda">
+		    <img src="img/moeda.png" alt="" width="300" height="200">
+		  <div class="desc">MÓDULO VENDAS</div>
+		</div>
+          
+<button type="button" class="btn success" data-toggle="modal" data-target="#modalDes">
+COMPRAR</button>
+<a href="index.html"><button type="button" class="btn danger" data-toggle="modal" data-target="#modalDes">
+VOLTAR</button></a>
+</div>
+  
+
+
+	</div>
+	</div>
+</div>
+
+   <div class="modal fade" id="modalDes" role="dialog">  
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" style="color: red;">&times</button>
+      <h4 class="modal-title"><center><strong style="color:#00bfff;">CARRINHO</strong></center></h4>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-4 modSac col-xs-2"><strong style="color: gray;">MÓDULO SAC</strong></div>
+          <div class="col-md-4 col-md-push-1 modSac col-xs-4 col-xs-push-1"><strong style="color: gray;" id="divSac"></strong></div>
+          <div class="col-md-4 modSac col-xs-3"><button type="button" class="close" id="closeSac"><p class="resource">&times</p></button></div>
+        </div>
+        <!-- div tel-->
+        <!-- div mal-->
+          <div class="row">
+          <div class="col-md-4 modGestao col-xs-2"><strong style="color: gray;">MÓDULO GESTÃO</strong></div>
+          <div class="col-md-4 col-md-push-1 modGestao col-xs-4 col-xs-push-1"><strong style="color: gray;" id="divGestao"></strong></div>
+          <div class="col-md-4 modGestao"><button type="button" class="close" id="closeGestao"><p class="resource">&times</p></button></div>
+        </div>
+          
+        <!-- div mal-->
+         <!-- div liv-->
+          <div class="row">
+          <div class="col-md-4 modVenda col-xs-2"><strong style="color: gray;">MÓDULO VENDA</strong></div>
+          <div class="col-md-4 col-md-push-1 modVenda col-xs-4 col-xs-push-1"><strong style="color: gray;" id="divVenda"></strong></div>
+          <div class="col-md-4 modVenda col-xs-3"><button type="button" class="close" id="closeVenda"><p class="resource">&times</p></button></div>
+        </div>
+          
+
+
+
+      </div>
+      <center><strong style="color: red;" id="total">TOTAL: R$00,00</strong></center>
+      <div class="modal-footer">
+      	<center>
+        <div class="row">
+          <div class="col-md-4 col-xs-4">
+            <button type="button" class="btn danger" data-dismiss="modal">CANCELAR</button>
+          </div>
+          <div class="col-md-8 col-xs-8">
+            <button type="button" class="btn success" id="compraReal">COMPRAR</button>
+          </div>
+        </div>
+        </center>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/pace.min.js"></script>
+<script src="js/loja.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/inspinia.js"></script>
+
+<script type="text/javascript">
+$('.modSac').hide();
+$('.modGestao').hide();
+$('.modVenda').hide();
+
+
+  var precoSac = 200;
+   var precoGestao = 500;
+    var precoVenda = 300;
+  var checks = [];
+
+ $('#check_sac').click( function(){
+  if ($('#check_sac').prop("checked")) {
+    
+    checks.push(precoSac);
+     atualizaSelect(checks);
+    resultadoCompra(checks);
+  $('.modSac').show();
+
+  }else{
+    for (var i = 0; i < 6; i++) {
+      
+    if(checks[i] == precoSac ){
+       checks.splice(i,1);
+       atualizaSelect(checks);
+     resultadoCompra(checks);
+
+
+    }
+    }
+     $('.modSac').hide();
+       
+  }
+
+ });
+
+  $('#check_gestao').click( function(){
+  if ($('#check_gestao').prop("checked")) {
+    
+    checks.push(precoGestao);
+     atualizaSelect(checks);
+    resultadoCompra(checks);
+   $('.modGestao').show();
+  }else{
+    for (var i = 0; i < 6; i++) {
+      
+    if(checks[i] == precoGestao ){
+       checks.splice(i,1);
+       atualizaSelect(checks);
+     resultadoCompra(checks);
+
+    }
+    }
+     $('.modGestao').hide();
+       
+  }
+
+ });
+
+  $('#check_venda').click( function(){
+  if ($('#check_venda').prop("checked")) {
+    
+    checks.push(precoVenda);
+     atualizaSelect(checks);
+    resultadoCompra(checks);
+    $('.modVenda').show();
+   
+
+  }else{
+    for (var i = 0; i < 6; i++) {
+      
+    if(checks[i] == precoVenda ){
+       checks.splice(i,1);
+       atualizaSelect(checks);
+     resultadoCompra(checks);
+
+    }
+    }
+    $('.modVenda').hide();
+     
+       
+  }
+
+ });
+
+ 
+
+$('#divSac').text(" R$ "+precoSac+",00");
+$('#divGestao').text(" R$ "+precoGestao+",00");
+$('#divVenda').text(" R$ "+precoVenda+",00");
+
+
+
+function resultadoCompra(checks){
+  var total = 0;
+  for(var i = 0;i < checks.length;i++){
+   
+   total += checks[i];
+
+  }
+  $('#total').text("Total: R$"+total+",00");
+}
+
+ function atualizaSelect(checks){
+  $('#itemselec').text('MÓDULOS SELECIONADOS: '+ checks.length);
+
+ }
+
+ $('#closeSac').click(function(){
+for (var i = 0; i < 6; i++) {
+      
+    if(checks[i] == precoSac ){
+       checks.splice(i,1);
+       atualizaSelect(checks);
+     resultadoCompra(checks);
+
+
+    }
+    }
+     $('.modSac').hide();
+     $('#check_sac').prop("checked",false);
+ });
+
+  $('#closeGestao').click(function(){
+for (var i = 0; i < 6; i++) {
+      
+    if(checks[i] == precoGestao ){
+       checks.splice(i,1);
+       atualizaSelect(checks);
+     resultadoCompra(checks);
+
+    }
+    }
+     $('.modGestao').hide();
+     $('#check_gestao').prop("checked",false);
+ });
+
+
+
+  $('#close').click(function(){
+  for (var i = 0; i < 6; i++) {
+      
+    if(checks[i] == precoVenda ){
+       checks.splice(i,1);
+       atualizaSelect(checks);
+     resultadoCompra(checks);
+
+    }
+    }
+    $('.modVenda').hide();
+    $('#check_venda').prop("checked",false);
+  
+ });
+
+
+  $('#compraReal').click(function(){
+    alert('COMPRA REALIZADA COM SUCESSO!');
+    window.location.reload(true)
+  });
+
+
+
+</script>
+
+
+</body>
+</html>
+
